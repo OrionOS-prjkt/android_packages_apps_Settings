@@ -22,7 +22,7 @@
 
 <com.android.settings.widget.HomepagePreference
         android:fragment="com.crdroid.settings.crDroidSettingsLayout"
-        android:icon="@drawable/ic_settings_cogs"
+        android:icon="@drawable/ic_orion_logo"
         android:key="top_level_crdroid"
         android:order="-151"
         android:title="@string/orion_settings_title"
