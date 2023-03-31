@@ -322,6 +322,7 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings impleme
                 subscriptionPreferenceControllers) {
             controller.init(mSubId);
         }
+        use(ForceLteCaPreferenceController.class).init(mSubId);
     }
 
     @Override
