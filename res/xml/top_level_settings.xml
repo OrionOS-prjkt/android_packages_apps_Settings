@@ -20,7 +20,7 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:key="top_level_settings">
 
-<com.android.settings.widget.HomepagePreference
+<com.android.settings.widget.HighlightHomepagePreference
         android:fragment="com.crdroid.settings.crDroidSettingsLayout"
         android:icon="@drawable/ic_orion_logo"
         android:key="top_level_crdroid"
