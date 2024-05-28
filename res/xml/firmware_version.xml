@@ -52,6 +52,14 @@
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.LineageVersionDetailPreferenceController"/>
 
+    <!-- Orion maintainer  -->
+    <Preference
+        android:key="orion_maintainer"
+        android:title="@string/orion_maintainer_title"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.OrionMaintainerPreferenceController"/>
+
     <!-- Security patch -->
     <Preference
         android:key="security_key"
