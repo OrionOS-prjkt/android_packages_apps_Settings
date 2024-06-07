@@ -21,59 +21,60 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
-    <!-- OrionOS logo -->
+    <!-- Firmware Header -->
     <com.android.settingslib.widget.LayoutPreference
-        android:layout="@layout/orion_logo"
-        android:key="orion_logo"
-        android:selectable="false" />
+        android:key="firmware_header"
+        android:layout="@layout/firmware_header_layout"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.controller.FirmwareHeaderPreferenceController"
+        android:selectable="false"/>
 
-    <!-- Device name -->
-    <Preference
-        android:key="about_device_name"
-        android:title="@string/about_device_name"
-        android:summary="@string/summary_placeholder"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.AboutDeviceNamePreferenceController"/>
-
-    <!-- Android version -->
-    <Preference
-        android:key="os_firmware_version"
-        android:title="@string/firmware_version"
-        android:summary="@string/summary_placeholder"
-        settings:enableCopying="true"
-        settings:searchable="false"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
-
-    <!-- Lineage version -->
-    <Preference
-        android:key="lineage_version"
-        android:title="@*lineageos.platform:string/lineage_version"
-        android:summary="@string/summary_placeholder"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.LineageVersionDetailPreferenceController"/>
-
-    <!-- Orion maintainer  -->
-    <Preference
-        android:key="orion_maintainer"
-        android:title="@string/orion_maintainer_title"
-        android:summary="@string/summary_placeholder"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.OrionMaintainerPreferenceController"/>
-
-    <!-- Security patch -->
-    <Preference
-        android:key="security_key"
-        android:title="@string/security_patch"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.SecurityPatchLevelPreferenceController"/>
-
-    <!-- Vendor security patch -->
-    <Preference
-        android:key="vendor_security_key"
-        android:title="@*lineageos.platform:string/lineage_vendor_security_patch"
+    <PreferenceCategory
+        android:key="firmware_version_category"
         android:selectable="false"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.LineageVendorSecurityPatchLevelPreferenceController"/>
+        android:title="@string/firmware_version_category_title">
+
+        <!-- Lineage version -->
+        <Preference
+            android:key="lineage_version"
+            android:title="@*lineageos.platform:string/lineage_version"
+            android:summary="@string/summary_placeholder"
+            settings:enableCopying="true"
+            settings:layout="@layout/card_preference_top"
+            settings:controller="com.android.settings.deviceinfo.firmwareversion.LineageVersionDetailPreferenceController"/>
+
+        <!-- Device name -->
+        <Preference
+            android:key="about_device_name"
+            android:title="@string/about_device_name"
+            android:summary="@string/summary_placeholder"
+            settings:enableCopying="true"
+            settings:layout="@layout/card_preference_bottom"
+            settings:controller="com.android.settings.deviceinfo.firmwareversion.AboutDeviceNamePreferenceController"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="firmware_security_category"
+        android:selectable="false"
+        android:title="@string/firmware_security_category_title">
+
+        <!-- Security patch -->
+        <Preference
+            android:key="security_key"
+            android:title="@string/security_patch"
+            settings:enableCopying="true"
+            settings:layout="@layout/card_preference_top"
+            settings:controller="com.android.settings.deviceinfo.firmwareversion.SecurityPatchLevelPreferenceController"/>
+
+        <!-- Vendor security patch -->
+        <Preference
+            android:key="vendor_security_key"
+            android:title="@*lineageos.platform:string/lineage_vendor_security_patch"
+            settings:enableCopying="true"
+            settings:layout="@layout/card_preference_bottom"
+            settings:controller="com.android.settings.deviceinfo.firmwareversion.LineageVendorSecurityPatchLevelPreferenceController"/>
+
+    </PreferenceCategory>        
 
     <!-- Mainline module version -->
     <!--
@@ -85,39 +86,47 @@
         settings:controller="com.android.settings.deviceinfo.firmwareversion.MainlineModuleVersionPreferenceController"/>
     -->
 
-    <!-- Baseband -->
-    <Preference
-        android:key="base_band"
-        android:title="@string/baseband_version"
-        android:summary="@string/summary_placeholder"
+    <PreferenceCategory
+        android:key="firmware_general_category"
         android:selectable="false"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.BasebandVersionPreferenceController"/>
+        android:title="@string/firmware_general_category_title">
 
-    <!-- Kernel -->
-    <Preference
-        android:key="kernel_version"
-        android:title="@string/kernel_version"
-        android:summary="@string/summary_placeholder"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.KernelVersionPreferenceController"/>
+        <!-- Baseband -->
+        <Preference
+            android:key="base_band"
+            android:title="@string/baseband_version"
+            android:summary="@string/summary_placeholder"
+            settings:enableCopying="true"
+            settings:layout="@layout/card_preference_top"
+            settings:controller="com.android.settings.deviceinfo.firmwareversion.BasebandVersionPreferenceController"/>
 
-    <!-- Build date -->
-    <Preference
-        android:key="os_build_date"
-        android:title="@*lineageos.platform:string/build_date"
-        android:summary="@string/summary_placeholder"
-        android:selectable="false"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.LineageBuildDatePreferenceController"/>
+        <!-- Kernel -->
+        <Preference
+            android:key="kernel_version"
+            android:title="@string/kernel_version"
+            android:summary="@string/summary_placeholder"
+            settings:enableCopying="true"
+            settings:layout="@layout/card_preference_middle"
+            settings:controller="com.android.settings.deviceinfo.firmwareversion.KernelVersionPreferenceController"/>
 
-    <!-- Build -->
-    <Preference
-        android:key="os_build_number"
-        android:title="@string/build_number"
-        android:summary="@string/summary_placeholder"
-        android:selectable="false"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.SimpleBuildNumberPreferenceController"/>
+        <!-- Build date -->
+        <Preference
+            android:key="os_build_date"
+            android:title="@*lineageos.platform:string/build_date"
+            android:summary="@string/summary_placeholder"
+            settings:enableCopying="true"
+            settings:layout="@layout/card_preference_middle"
+            settings:controller="com.android.settings.deviceinfo.firmwareversion.LineageBuildDatePreferenceController"/>
+
+        <!-- Build -->
+        <Preference
+            android:key="os_build_number"
+            android:title="@string/build_number"
+            android:summary="@string/summary_placeholder"
+            settings:enableCopying="true"
+            settings:layout="@layout/card_preference_bottom"
+            settings:controller="com.android.settings.deviceinfo.firmwareversion.SimpleBuildNumberPreferenceController"/>
+
+    </PreferenceCategory>        
 
 </PreferenceScreen>
