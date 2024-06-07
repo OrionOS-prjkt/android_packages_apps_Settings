@@ -14,4 +14,11 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Orion maintainer -->
     <string name="orion_maintainer_title">Maintainer</string>
+
+    <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
+    <string name="android_version">Android</string>
+    <string name="firmware_version_category_title">Firmware Version</string>
+    <string name="firmware_security_category_title">Firmware Security</string>
+    <string name="firmware_general_category_title">Firmware General</string>
+    <string name="firmware_information">Firmware Information</string>
 </resources>
