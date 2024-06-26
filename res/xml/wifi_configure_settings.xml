@@ -30,6 +30,7 @@
         android:key="wifi_timeout"
         android:title="@string/wifi_timeout"
         android:summary="@string/wifi_timeout_summary"
+        android:icon="@drawable/ic_wifi_off"
         android:entries="@array/custom_timeout_entries"
         android:entryValues="@array/custom_timeout_values"
         settings:controller="com.android.settings.wifi.WifiTimeoutPreferenceController"/>
@@ -51,15 +52,18 @@
         android:key="wifi_cellular_data_fallback"
         android:title="@string/wifi_cellular_data_fallback_title"
         android:summary="@string/wifi_cellular_data_fallback_summary"
+        android:icon="@drawable/ic_sim_card_download"
         settings:controller="com.android.settings.wifi.CellularFallbackPreferenceController" />
 
     <Preference
         android:key="install_credentials"
+        android:icon="@drawable/ic_certificate"
         android:title="@string/wifi_install_credentials"/>
 
     <Preference
         android:key="wifi_direct"
         android:title="@string/wifi_menu_p2p"
+        android:icon="@drawable/ic_cast_24dp"
         android:fragment="com.android.settings.wifi.p2p.WifiP2pSettings" />
 
 </PreferenceScreen>
