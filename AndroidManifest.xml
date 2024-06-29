@@ -143,6 +143,12 @@
     <uses-permission android:name="android.permission.MANAGE_GAME_MODE" />
     <uses-permission android:name="android.permission.RESTART_PHONE_PROCESS" />
     <uses-permission android:name="android.permission.MANAGE_ENHANCED_CONFIRMATION_STATES" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- App lock -->
+    <uses-permission android:name="android.permission.MANAGE_APP_LOCK" />
+
+    <protected-broadcast android:name="com.android.systemui.doze.pulse" />
 
     <application
             android:name=".SettingsApplication"
@@ -157,7 +163,7 @@
             android:defaultToDeviceProtectedStorage="true"
             android:directBootAware="true"
             android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-            tools:replace="android:appComponentFactory"
+            tools:replace="android:appComponentFactory,android:name"
             android:gwpAsanMode="always"
             android:enableOnBackInvokedCallback="true">
 
@@ -2697,7 +2703,7 @@
             android:screenOrientation="portrait"/>
 
         <activity android:name=".biometrics.face.FaceEnrollFinish"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait"/>
 
         <activity android:name=".biometrics.BiometricHandoffActivity"
@@ -3094,8 +3100,14 @@
                        android:value="@string/menu_key_connected_devices"/>
         </activity>
 
-        <activity android:name=".development.AppPicker"
-                  android:label="@string/select_application" />
+        <activity
+            android:name=".development.AppPicker"
+            android:label="@string/select_application">
+
+            <meta-data
+                android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.development.AppPicker$AppPickerListFragment" />
+        </activity>
 
         <activity android:name=".development.AdbQrCodeActivity" />
 
@@ -4797,6 +4809,10 @@
                     <action android:name="android.settings.panel.action.VOLUME" />
                     <category android:name="android.intent.category.DEFAULT" />
                 </intent-filter>
+                <intent-filter>
+                    <action android:name="android.settings.panel.action.APP_VOLUME" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                </intent-filter>
         </activity>
 
         <activity android:name=".wifi.addappnetworks.AddAppNetworksActivity"
@@ -5244,5 +5260,61 @@
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
                 android:value="true" />
         </activity>
+        <activity android:name=".Settings$SmartPixelsActivity"
+            android:label="@string/smart_pixels_title"
+            android:taskAffinity="com.android.settings"
+            android:exported="true"
+            android:parentActivityName="Settings">
+            <intent-filter android:priority="1">
+                <action android:name="android.settings.SMART_PIXELS_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.crdroid.settings.fragments.ui.SmartPixels" />
+        </activity>
+        <activity android:name="com.crdroid.settings.fragments.ui.DisplayCutoutForceFullscreenActivity"
+                android:label="@string/display_cutout_force_fullscreen_title"
+                android:theme="@style/Theme.SubSettingsBase"
+                android:enabled="true"
+                android:exported="true"
+                android:taskAffinity="com.android.settings"
+                android:parentActivityName="Settings">
+            <intent-filter android:priority="70">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.crdroid.settings.fragments.ui.doze.DozeReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.crdroid.settings.fragments.ui.doze.DozeService"
+                android:exported="true"
+                android:permission="crDroidDozeService">
+        </service>
+
+        <!-- App lock -->
+        <activity android:name=".security.applock.AppLockCredentialActivity"
+            android:exported="false"
+            android:permission="android.permission.MANAGE_APP_LOCK"
+            android:excludeFromRecents="true"
+            android:stateNotNeeded="true"
+            android:taskAffinity="com.android.settings.applock"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.app.action.UNLOCK_APP" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".security.applock.AppLockSubSettings"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:taskAffinity="com.android.settings.applock"
+            android:launchMode="singleTask" />
     </application>
 </manifest>

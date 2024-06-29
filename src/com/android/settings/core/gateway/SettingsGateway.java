@@ -203,6 +203,9 @@ import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSetting
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.crdroid.settings.crDroidSettingsLayout;
+import com.crdroid.settings.fragments.ui.SmartPixels;
+
+import con.android.settings.wifi.tether.WifiTetherClientManager;
 
 public class SettingsGateway {
 
@@ -395,6 +398,8 @@ public class SettingsGateway {
             VibrationIntensitySettingsFragment.class.getName(),
             crDroidSettingsLayout.class.getName(),
             RunningServices.class.getName(),
+            SmartPixels.class.getName(),
+            WifiTetherClientManager.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -443,5 +448,6 @@ public class SettingsGateway {
             Settings.NavigationModeSettingsActivity.class.getName(),
             Settings.crDroidSettingsLayoutActivity.class.getName(),
             Settings.DevRunningServicesActivity.class.getName(),
+            Settings.SmartPixelsActivity.class.getName(),
     };
 }

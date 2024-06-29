@@ -100,9 +100,6 @@ public abstract class DefaultSubscriptionController extends TelephonyBasePrefere
         mMobileNetworkRepository.addRegister(mLifecycleOwner, this,
                 SubscriptionManager.INVALID_SUBSCRIPTION_ID);
         mMobileNetworkRepository.updateEntity();
-        // Can not get default subId from database until get the callback, add register by subId
-        // later.
-        mMobileNetworkRepository.addRegisterBySubId(getDefaultSubscriptionId());
         mDataSubscriptionChangedReceiver.registerReceiver();
     }
 
@@ -116,8 +113,6 @@ public abstract class DefaultSubscriptionController extends TelephonyBasePrefere
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
         mPreference = screen.findPreference(getPreferenceKey());
-        // Set a summary placeholder to reduce flicker.
-        mPreference.setSummaryProvider(pref -> mContext.getString(R.string.summary_placeholder));
         updateEntries();
     }
 
