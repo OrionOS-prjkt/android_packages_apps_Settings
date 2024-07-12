@@ -1,25 +1,61 @@
-<!--
-  Copyright (C) 2018 The Android Open Source Project
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
-  -->
+<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-        android:width="24dp"
-        android:height="24dp"
-        android:viewportWidth="24.0"
-        android:viewportHeight="24.0">
+    android:tint="?android:colorControlNormal"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
     <path
-        android:pathData="M20.31,9V4.31H15.62L12.31,1L9,4.31H4.31V9L1,12.31L4.31,15.62V20.31H9L12.31,23.62L15.62,20.31H20.31V15.62L23.62,12.31L20.31,9ZM18.31,14.79V18.31H14.79L12.31,20.79L9.83,18.31H6.31V14.79L3.83,12.31L6.31,9.83V6.31H9.83L12.31,3.83L14.79,6.31H18.31V9.83L20.79,12.31L18.31,14.79ZM17.31,12.31C17.31,15.07 15.07,17.31 12.31,17.31V7.31C15.07,7.31 17.31,9.55 17.31,12.31Z"
-        android:fillType="evenOdd"
-        android:fillColor="?android:attr/colorPrimary"/>
+        android:fillColor="#00ffffff"
+        android:strokeColor="#292D32"
+        android:strokeWidth="1.5"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"
+        android:pathData="M7.26022 2H16.7302C17.3802 2 17.9602 2.02003 18.4802 2.09003C21.2502 2.40003 22.0002 3.70001 22.0002 7.26001V13.58C22.0002 17.14 21.2502 18.44 18.4802 18.75C17.9602 18.82 17.3902 18.84 16.7302 18.84H7.26022C6.61022 18.84 6.03022 18.82 5.51022 18.75C2.74022 18.44 1.99023 17.14 1.99023 13.58V7.26001C1.99023 3.70001 2.74022 2.40003 5.51022 2.09003C6.03022 2.02003 6.61022 2 7.26022 2Z" />
+    <path
+        android:fillColor="#00ffffff"
+        android:fillAlpha="0.4"
+        android:strokeColor="#292D32"
+        android:strokeAlpha="0.4"
+        android:strokeWidth="1.5"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"
+        android:pathData="M13.5801 8.31982H17.2601" />
+    <path
+        android:fillColor="#00ffffff"
+        android:fillAlpha="0.4"
+        android:strokeColor="#292D32"
+        android:strokeAlpha="0.4"
+        android:strokeWidth="1.5"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"
+        android:pathData="M6.74023 14.1099H6.76022H17.2702" />
+    <path
+        android:fillColor="#00ffffff"
+        android:fillAlpha="0.4"
+        android:strokeColor="#292D32"
+        android:strokeAlpha="0.4"
+        android:strokeWidth="1.5"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"
+        android:pathData="M7 22H17" />
+    <path
+        android:fillColor="#00ffffff"
+        android:fillAlpha="0.4"
+        android:strokeColor="#292D32"
+        android:strokeAlpha="0.4"
+        android:strokeWidth="2"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"
+        android:pathData="M7.1947 8.2998H7.20368" />
+    <path
+        android:fillColor="#00ffffff"
+        android:fillAlpha="0.4"
+        android:strokeColor="#292D32"
+        android:strokeAlpha="0.4"
+        android:strokeWidth="2"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"
+        android:pathData="M10.4945 8.2998H10.5035" />
 </vector>
