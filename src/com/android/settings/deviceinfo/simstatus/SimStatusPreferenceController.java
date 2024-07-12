@@ -106,6 +106,7 @@ public class SimStatusPreferenceController extends BasePreferenceController {
             final Preference multiSimPreference = createNewPreference(screen.getContext());
             multiSimPreference.setOrder(mSlotSimStatus.getPreferenceOrdering(simSlotNumber));
             multiSimPreference.setKey(mSlotSimStatus.getPreferenceKey(simSlotNumber));
+            multiSimPreference.setLayoutResource(R.layout.card_preference_middle);
             category.addPreference(multiSimPreference);
         }
     }
