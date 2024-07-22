@@ -21,27 +21,56 @@
     android:key="my_device_info_pref_screen"
     android:title="@string/about_settings">
 
+    <!-- Card Header -->
     <com.android.settingslib.widget.LayoutPreference
         android:key="my_device_info_header"
-        android:order="-1"
-        android:layout="@layout/settings_entity_header"
-        android:selectable="false"/>
+        android:order="-999"
+        android:layout="@layout/about_device_info"
+        android:selectable="false"
+	settings:isPreferenceVisible="true" />
+
+        <com.android.settings.widget.ValidatedEditTextPreference
+            android:icon="@drawable/ic_about_device"
+            android:title="@string/my_device_info_device_name_preference_title"
+            android:key="device_name"
+            android:summary="@string/summary_placeholder"
+            android:order="-998"
+            settings:controller="com.android.settings.deviceinfo.DeviceNamePreferenceController"
+            settings:enableCopying="true"
+            settings:layout="@layout/orion_preference_device_name" />
+        
+        <declan.prjct.settings.aboutphone.StoragePreference
+            android:title="Storage"
+            android:key="storage_info"
+            android:summary="@string/summary_placeholder"
+            android:order="-997"
+            android:fragment="com.android.settings.deviceinfo.StorageDashboardFragment"
+            settings:controller="declan.prjct.settings.aboutphone.StoragePreferencesController"
+            settings:enableCopying="true"
+            settings:layout="@layout/orion_preference_storage" />
+
+        <com.android.settingslib.widget.LayoutPreference
+            android:key="my_device_hw_header"
+            android:order="-996"
+            android:layout="@layout/about_device_info_hw"
+            android:selectable="false"
+	    android:clickable="false"
+            settings:isPreferenceVisible="true"/>
 
     <PreferenceCategory
         android:key="basic_info_category"
         android:selectable="false"
         android:title="@string/my_device_info_basic_info_category_title">
 
-        <!-- Device name -->
-        <com.android.settings.widget.ValidatedEditTextPreference
-            android:key="device_name"
+        <!-- Android version -->
+        <Preference
+	    android:key="firmware_version"
             android:order="1"
-            android:title="@string/my_device_info_device_name_preference_title"
+            android:title="@string/firmware_version"
             android:summary="@string/summary_placeholder"
-            settings:controller="com.android.settings.deviceinfo.DeviceNamePreferenceController"
-            settings:enableCopying="true"/>
+            android:fragment="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionSettings"
+            settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionPreferenceController"/>
 
-        <!-- Account name -->
         <Preference
             android:key="branded_account"
             android:order="2"
@@ -135,19 +164,10 @@
             settings:isPreferenceVisible="@bool/config_show_sim_info"
             settings:controller="com.android.settings.deviceinfo.imei.ImeiInfoPreferenceController"/>
 
-        <!-- Android version -->
-        <Preference
-            android:key="firmware_version"
-            android:order="42"
-            android:title="@string/firmware_version"
-            android:summary="@string/summary_placeholder"
-            android:fragment="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionSettings"
-            settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionPreferenceController"/>
-
         <!-- Lineage version -->
         <Preference
             android:key="lineage_os_version"
-            android:order="43"
+            android:order="42"
             android:title="@*lineageos.platform:string/lineage_version"
             android:summary="@string/summary_placeholder"
             settings:enableCopying="true"
@@ -160,7 +180,7 @@
         <!--IP address -->
         <Preference
             android:key="wifi_ip_address"
-            android:order="44"
+            android:order="43"
             android:title="@string/wifi_ip_address"
             android:summary="@string/summary_placeholder"
             android:selectable="false"
@@ -169,7 +189,7 @@
         <!-- Wi-Fi MAC address -->
         <Preference
             android:key="saved_accesspoints_wifi_mac_address"
-            android:order="45"
+            android:order="44"
             android:title="@string/status_wifi_mac_address"
             android:summary="@string/view_saved_network"
             android:fragment="com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSettings2"
@@ -178,7 +198,7 @@
         <!-- Factory Wi-Fi MAC address -->
         <Preference
             android:key="wifi_mac_address"
-            android:order="46"
+            android:order="45"
             android:title="@string/status_device_wifi_mac_address"
             android:summary="@string/summary_placeholder"
             android:selectable="false"
@@ -187,7 +207,7 @@
         <!-- Bluetooth address -->
         <Preference
             android:key="bt_address"
-            android:order="47"
+            android:order="46"
             android:title="@string/status_bt_address"
             android:summary="@string/summary_placeholder"
             android:selectable="false"
@@ -196,7 +216,7 @@
         <!-- Device up time -->
         <Preference
             android:key="up_time"
-            android:order="48"
+            android:order="47"
             android:title="@string/status_up_time"
             android:summary="@string/summary_placeholder"
             android:selectable="false"/>
@@ -204,7 +224,7 @@
         <!-- Device deep sleep time -->
         <Preference
             android:key="sleep_time"
-            android:order="49"
+            android:order="48"
             android:title="@string/status_sleep_time"
             android:summary="@string/summary_placeholder"
             android:selectable="false"/>
@@ -212,7 +232,7 @@
         <!-- Manual -->
         <Preference
             android:key="manual"
-            android:order="50"
+            android:order="49"
             android:title="@string/manual">
             <intent android:action="android.settings.SHOW_MANUAL"/>
         </Preference>
@@ -220,21 +240,21 @@
         <!-- Feedback on the device -->
         <Preference
             android:key="device_feedback"
-            android:order="51"
+            android:order="50"
             android:title="@string/device_feedback"
             settings:keywords="@string/keywords_device_feedback"/>
 
         <!-- Device FCC equipment id -->
         <Preference
             android:key="fcc_equipment_id"
-            android:order="52"
+            android:order="51"
             android:title="@string/fcc_equipment_id"
             android:summary="@string/summary_placeholder"/>
 
         <!-- Build number -->
         <Preference
             android:key="build_number"
-            android:order="53"
+            android:order="52"
             android:title="@string/build_number"
             android:summary="@string/summary_placeholder"
             settings:enableCopying="true"
