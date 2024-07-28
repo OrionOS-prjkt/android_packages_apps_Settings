@@ -50,7 +50,7 @@ public class FirmwareHeaderPreferenceController extends BasePreferenceController
     private static final String KEY_DEVICE_MAINTAINER_PROP = "ro.orion.maintainer";
     private static final String KEY_DEVICE_MAINTAINER_LINK_PROP = "ro.orion.maintainer_link";
 
-    private static final Uri ROM_URI_DATA = Uri.parse("https://orion-os.vercel.app/");
+    private static final Uri ROM_URI_DATA = Uri.parse("https://orion-os.vercel.app");
     private static final Uri MT_URI_DATA = Uri.parse(SystemProperties.get(KEY_DEVICE_MAINTAINER_LINK_PROP));
 
     private final UserManager mUserManager;
