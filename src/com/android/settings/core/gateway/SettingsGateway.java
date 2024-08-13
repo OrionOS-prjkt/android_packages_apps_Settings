@@ -203,6 +203,16 @@ import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSetting
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.crdroid.settings.crDroidSettingsLayout;
+import com.crdroid.settings.fragments.About;
+import com.crdroid.settings.fragments.UserInterface;
+import com.crdroid.settings.fragments.StatusBar;
+import com.crdroid.settings.fragments.QuickSettings;
+import com.crdroid.settings.fragments.LockScreen;
+import com.crdroid.settings.fragments.Buttons;
+import com.crdroid.settings.fragments.Navigation;
+import com.crdroid.settings.fragments.Notifications;
+import com.crdroid.settings.fragments.Sound;
+import com.crdroid.settings.fragments.Miscellaneous;
 import com.crdroid.settings.fragments.ui.SmartPixels;
 
 public class SettingsGateway {
@@ -395,6 +405,16 @@ public class SettingsGateway {
             ResetNetwork.class.getName(),
             VibrationIntensitySettingsFragment.class.getName(),
             crDroidSettingsLayout.class.getName(),
+            About.class.getName(),
+            UserInterface.class.getName(),
+            StatusBar.class.getName(),
+            QuickSettings.class.getName(),
+            LockScreen.class.getName(),
+            Buttons.class.getName(),
+            Navigation.class.getName(),
+            Notifications.class.getName(),
+            Sound.class.getName(),
+            Miscellaneous.class.getName(),
             RunningServices.class.getName(),
             SmartPixels.class.getName(),
     };
@@ -444,6 +464,16 @@ public class SettingsGateway {
             Settings.MemtagPageActivity.class.getName(),
             Settings.NavigationModeSettingsActivity.class.getName(),
             Settings.crDroidSettingsLayoutActivity.class.getName(),
+            Settings.crDroidAboutActivity.class.getName(),
+            Settings.crDroidUserInterfaceActivity.class.getName(),
+            Settings.crDroidStatusBarActivity.class.getName(),
+            Settings.crDroidQuickSettingsActivity.class.getName(),
+            Settings.crDroidLockScreenActivity.class.getName(),
+            Settings.crDroidButtonsActivity.class.getName(),
+            Settings.crDroidNavigationActivity.class.getName(),
+            Settings.crDroidNotificationsActivity.class.getName(),
+            Settings.crDroidSoundActivity.class.getName(),
+            Settings.crDroidMiscActivity.class.getName(),
             Settings.DevRunningServicesActivity.class.getName(),
             Settings.SmartPixelsActivity.class.getName(),
     };

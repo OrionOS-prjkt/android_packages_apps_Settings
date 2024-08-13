@@ -493,6 +493,26 @@ public class Settings extends SettingsActivity {
 
     public static class crDroidSettingsLayoutActivity extends SettingsActivity {}
 
+    public static class crDroidAboutActivity extends SettingsActivity {}
+
+    public static class crDroidUserInterfaceActivity extends SettingsActivity {}
+
+    public static class crDroidStatusBarActivity extends SettingsActivity {}
+
+    public static class crDroidQuickSettingsActivity extends SettingsActivity {}
+
+    public static class crDroidLockScreenActivity extends SettingsActivity {}
+
+    public static class crDroidButtonsActivity extends SettingsActivity {}
+
+    public static class crDroidNavigationActivity extends SettingsActivity {}
+
+    public static class crDroidNotificationsActivity extends SettingsActivity {}
+
+    public static class crDroidSoundActivity extends SettingsActivity {}
+
+    public static class crDroidMiscActivity extends SettingsActivity {}
+
     public static class DevRunningServicesActivity extends SettingsActivity { /* empty */ }
 
     public static class SmartPixelsActivity extends SettingsActivity {}

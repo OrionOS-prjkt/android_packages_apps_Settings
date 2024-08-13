@@ -5240,6 +5240,96 @@
             </intent-filter>
         </activity>
 
+        <!-- About -->
+        <activity android:name="Settings$crDroidAboutActivity"
+                  android:label="@string/about_crdroid"
+                  android:icon="@drawable/ic_interface_about"
+                  android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.crdroid.settings.fragments.About" />
+        </activity>
+
+        <!-- UserInterface -->
+        <activity android:name="Settings$crDroidUserInterfaceActivity"
+                  android:label="@string/ui_title"
+                  android:icon="@drawable/ic_interface_customization"
+                  android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.crdroid.settings.fragments.UserInterface" />
+        </activity>
+
+        <!-- Statusbar -->
+        <activity android:name="Settings$crDroidStatusBarActivity"
+                  android:label="@string/statusbar_title"
+                  android:icon="@drawable/ic_interface_statusbar"
+                  android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.crdroid.settings.fragments.StatusBar" />
+        </activity>
+
+        <!-- QuickSettings -->
+        <activity android:name="Settings$crDroidQuickSettingsActivity"
+                  android:label="@string/quicksettings_title"
+                  android:icon="@drawable/ic_interface_quicksettings"
+                  android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.crdroid.settings.fragments.QuickSettings" />
+        </activity>
+
+        <!-- Lockscreen -->
+        <activity android:name="Settings$crDroidLockScreenActivity"
+                  android:label="@string/lockscreen_title"
+                  android:icon="@drawable/ic_interface_lockscreen"
+                  android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.crdroid.settings.fragments.LockScreen" />
+        </activity>
+
+        <!-- Buttons -->
+        <activity android:name="Settings$crDroidButtonsActivity"
+                  android:label="@string/button_title"
+                  android:icon="@drawable/ic_interface_buttons"
+                  android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.crdroid.settings.fragments.Buttons" />
+        </activity>
+
+        <!-- Navigation -->
+        <activity android:name="Settings$crDroidNavigationActivity"
+                  android:label="@string/navigation_title"
+                  android:icon="@drawable/ic_interface_navbar"
+                  android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.crdroid.settings.fragments.Navigation" />
+        </activity>
+
+        <!-- Notifications -->
+        <activity android:name="Settings$crDroidNotificationsActivity"
+                  android:label="@string/notifications_title"
+                  android:icon="@drawable/ic_interface_notifications"
+                  android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.crdroid.settings.fragments.Notifications" />
+        </activity>
+
+        <!-- Sound -->
+        <activity android:name="Settings$crDroidSoundActivity"
+                  android:label="@string/sound_title"
+                  android:icon="@drawable/ic_interface_sound"
+                  android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.crdroid.settings.fragments.Sound" />
+        </activity>
+
+        <!-- Misc -->
+        <activity android:name="Settings$crDroidMiscActivity"
+                  android:label="@string/misc_title"
+                  android:icon="@drawable/ic_interface_misc"
+                  android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.crdroid.settings.fragments.Miscellaneous" />
+        </activity>
+
         <!-- Provide direct entry into Dev settings - Running Services -->
         <activity android:name="Settings$DevRunningServicesActivity"
                 android:label="@string/runningservices_settings_title"
