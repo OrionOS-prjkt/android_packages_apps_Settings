@@ -19,6 +19,7 @@ package com.android.settings.deviceinfo.aboutphone
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.graphics.Typeface
 import android.os.Build
 import android.os.SystemProperties
 import android.widget.ImageView
@@ -56,10 +57,30 @@ class AkihabaraDeviceInfoPreferenceController(context: Context) : AbstractPrefer
         return getProp(KEY_DEVICE_CHIPSET)
     }
 
+    private fun getOrionVersion(): String {
+        val propOrionVer = getProp(PROP_ORION_VERSION)
+        val propOrionCodeVer = getProp(PROP_ORION_CODE_VERSION)
+
+        return "OrionOS Version : $propOrionVer $propOrionCodeVer"
+    }
+
+    private fun getOrionBuildStatus(releaseType: String): String {
+        return mContext.getString(if (releaseType == "official") R.string.official_title else R.string.unofficial_title)
+    }
+
     override fun displayPreference(screen: PreferenceScreen) {
         super.displayPreference(screen)
 
+        val releaseType = getProp(PROP_ORION_RELEASETYPE).lowercase()
+        val isOfficial = releaseType == "official"
+        val orionVersion = getOrionVersion()
+
         val hwInfoPreference = screen.findPreference<LayoutPreference>(KEY_HW_INFO)!!
+        val buildStatusPreference = screen.findPreference<Preference>(KEY_BUILD_STATUS_INFO)!!
+
+        buildStatusPreference.setTitle(getOrionBuildStatus(releaseType).lowercase())
+        buildStatusPreference.setSummary(orionVersion)
+        buildStatusPreference.setIcon(if (isOfficial) R.drawable.verified else R.drawable.unverified)
 
         hwInfoPreference.apply {
             findViewById<TextView>(R.id.akihabara_device_chipset).text = getDeviceChipset()
@@ -79,8 +100,13 @@ class AkihabaraDeviceInfoPreferenceController(context: Context) : AbstractPrefer
 
         private const val KEY_HW_INFO = "akihabara_device_hw"
         private const val KEY_DEVICE_INFO = "my_device_info_header"
+        private const val KEY_BUILD_STATUS_INFO = "device_verified_rom_status"
 
         private const val KEY_DEVICE_CHIPSET = "ro.board.platform"
+
+        private const val PROP_ORION_RELEASETYPE = "ro.orion.release.type"
+        private const val PROP_ORION_VERSION = "ro.orion.version"
+        private const val PROP_ORION_CODE_VERSION = "ro.modversion"
 
     }
 }

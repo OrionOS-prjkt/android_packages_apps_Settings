@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright 2024 OrionOS
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+	<path
+		android:fillColor="#FFDD1E44"
+		android:strokeLineJoin="miter"
+		android:fillType="nonZero"
+		android:strokeLineCap="square"
+		android:pathData="M3.66,17.27L3.67,6.70A3.05 3.05 0 0 1 6.73,3.66L17.30,3.67A3.05 3.05 0 0 1 20.34,6.73L20.33,17.30A3.05 3.05 0 0 1 17.27,20.34L6.70,20.33A3.05 3.05 0 0 1 3.66,17.27z"/>
+	<path
+		android:fillColor="#FFDD1E44"
+		android:strokeColor="@color/preference_card_background"
+		android:strokeWidth="2.4"
+		android:strokeLineJoin="miter"
+		android:fillType="nonZero"
+		android:strokeLineCap="round"
+		android:pathData="M7.00,17.00L17.00,7.00"/>
+	<path
+		android:fillColor="#FFDD1E44"
+		android:strokeColor="@color/preference_card_background"
+		android:strokeWidth="2.4"
+		android:strokeLineJoin="miter"
+		android:fillType="nonZero"
+		android:strokeLineCap="round"
+		android:pathData="M17.00,17.00L7.00,7.00"/>
+</vector>

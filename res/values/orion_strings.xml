@@ -23,4 +23,8 @@
     <string name="firmware_information">Firmware Information</string>
     <string name="akihabara_device_chipset_title">Chipset</string>
     <string name="akihabara_device_ram_title">RAM</string>
+
+    <!-- Build Status -->
+    <string name="official_title">#OrionCheck</string>
+    <string name="unofficial_title">#OrionCross</string>
 </resources>
